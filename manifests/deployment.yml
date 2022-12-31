@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "mycluster-978b"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "mycluster-978b"
+  template:
+    metadata:
+      labels:
+        app: "mycluster-978b"
+    spec:
+      containers:
+        - name: "mycluster-978b"
+          image: "voteacr31122022.azurecr.io/mycluster"
+          ports:
+          - containerPort: 80
